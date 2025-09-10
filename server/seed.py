@@ -5,6 +5,8 @@ from app import app
 from models import db, Earthquake
 
 with app.app_context():
+    # Create tables if they don't exist
+    db.create_all()
 
     # Delete all rows in the "earthquakes" table
     Earthquake.query.delete()
